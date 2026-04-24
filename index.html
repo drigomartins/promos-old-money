@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      @import url('https://api.fontshare.com/v2/css?f[]=bespoke-serif@400,500,700&f[]=satoshi@300,400,500,700&display=swap');
+      :root {
+        --gold: #d4af37;
+        --deep-black: #0a0a0a;
+      }
+      body {
+        font-family: 'Satoshi', sans-serif;
+        background-color: var(--deep-black);
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      .serif {
+        font-family: 'Bespoke Serif', serif;
+      }
+      .gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #d4af37 0%,
+          #f1d38e 50%,
+          #b28f2a 100%
+        );
+      }
+      .gold-border {
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .cta-glow {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .texture-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.02;
+        background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+        z-index: 50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="texture-overlay"></div>
+    <div class="w-full flex flex-col relative min-h-screen">
+      <header class="shrink-0 pt-14 px-6 flex justify-center items-center z-10">
+        <img
+          src="images/logo-promo-old-money.png"
+          alt="PM Promos Logo"
+          class="h-[170px] w-full object-cover"
+        />
+      </header>
+      <main class="flex-1 px-6 pt-10 pb-12">
+        <section class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(212,175,55,0.4)] bg-[rgba(212,175,55,0.05)] mb-8"
+          >
+            <span
+              class="flex h-1.5 w-1.5 rounded-full bg-[#D4AF37] animate-pulse"
+            ></span>
+            <span
+              class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#D4AF37]"
+              >Acesso Exclusivo Liberado</span
+            >
+          </div>
+          <h1 class="text-[42px] leading-[1.1] font-bold tracking-tight mb-6">
+            Se vista como <span class="text-[#D4AF37] italic">rico</span> sem
+            gastar muito
+          </h1>
+          <p
+            class="text-lg text-white/60 leading-relaxed mb-10 font-light max-w-[280px] mx-auto"
+          >
+            Entre no grupo onde eu posto roupas, perfumes e acessórios com
+            estética Old Money — com descontos reais.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/HQCTiJPN7hJ0oEEFaK2cfh"
+            id="hero-cta"
+            class="gold-gradient cta-glow flex items-center justify-center w-full py-5 rounded-xl text-black font-bold text-lg tracking-wide uppercase transition-transform active:scale-95"
+          >
+            <iconify-icon
+              icon="logos:whatsapp-icon"
+              class="mr-3 text-2xl"
+            ></iconify-icon>
+            Entrar no grupo agora
+          </a>
+        </section>
+        <section class="mb-16">
+          <div
+            class="relative rounded-3xl overflow-hidden gold-border aspect-[4/5] group"
+          >
+            <img
+              src="images/59cb46ef-841d-48f5-8510-cc5bb28af6ae.jpg"
+              alt="Old Money Lifestyle"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="serif text-2xl font-medium leading-tight">
+                Luxo silencioso ao <br />seu alcance.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="mb-20 space-y-6">
+          <h2 class="serif text-2xl font-bold text-center mb-10">
+            Vantagens do Membro
+          </h2>
+          <div class="grid grid-cols-1 gap-4">
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#D4AF37]/10 shrink-0"
+              >
+                <iconify-icon
+                  icon="lucide:gem"
+                  class="text-xl text-[#D4AF37]"
+                ></iconify-icon>
+              </div>
+              <div>
+                <h3 class="font-bold mb-1">Aparência Premium</h3>
+                <p class="text-sm text-white/50">
+                  Produtos que transmitem status e bom gosto sem logotipos
+                  óbvios.
+                </p>
+              </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#D4AF37]/10 shrink-0"
+              >
+                <iconify-icon
+                  icon="lucide:link"
+                  class="text-xl text-[#D4AF37]"
+                ></iconify-icon>
+              </div>
+              <div>
+                <h3 class="font-bold mb-1">Links Diretos</h3>
+                <p class="text-sm text-white/50">
+                  Curadoria de sites confiáveis com preços que ninguém mais
+                  encontra.
+                </p>
+              </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#D4AF37]/10 shrink-0"
+              >
+                <iconify-icon
+                  icon="lucide:shield-check"
+                  class="text-xl text-[#D4AF37]"
+                ></iconify-icon>
+              </div>
+              <div>
+                <h3 class="font-bold mb-1">Sem Spam</h3>
+                <p class="text-sm text-white/50">
+                  Notificações apenas para o que realmente importa. Qualidade
+                  sobre quantidade.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mb-20">
+          <h2 class="serif text-2xl font-bold text-center mb-10">
+            Feedback dos Membros
+          </h2>
+          <div class="space-y-4">
+            <div
+              class="p-6 rounded-2xl border-l-4 border-[#D4AF37] bg-white/[0.02]"
+            >
+              <p class="italic text-white/80 leading-relaxed">
+                "Entrei no grupo e já comprei várias peças muito boas pagando
+                barato. O estilo mudou completamente."
+              </p>
+              <p
+                class="mt-4 text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]"
+              >
+                Gabriel M. — Membro há 2 meses
+              </p>
+            </div>
+            <div
+              class="p-6 rounded-2xl border-l-4 border-[#D4AF37] bg-white/[0.02]"
+            >
+              <p class="italic text-white/80 leading-relaxed">
+                "Os perfumes que postaram aqui duram o dia todo e custaram 1/4
+                do preço dos originais. Recomendo dms."
+              </p>
+              <p
+                class="mt-4 text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]"
+              >
+                Rodrigo S. — Membro há 1 mês
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="text-center py-12 px-6 glass-card rounded-[2rem] gold-border relative"
+        >
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2">
+            <div
+              class="gold-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
+            >
+              <iconify-icon
+                icon="lucide:lock"
+                class="text-black text-lg"
+              ></iconify-icon>
+            </div>
+          </div>
+          <p
+            class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-3 font-bold"
+          >
+            Grupo Privado
+          </p>
+          <p class="serif text-xl mb-8 leading-relaxed">
+            Acesso liberado por tempo limitado para manter a qualidade da
+            curadoria.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/HQCTiJPN7hJ0oEEFaK2cfh"
+            id="final-cta"
+            class="gold-gradient w-full flex items-center justify-center py-5 rounded-xl text-black font-bold text-lg tracking-wide uppercase shadow-[0_10px_30px_-10px_rgba(212,175,55,0.4)]"
+          >
+            Quero entrar agora
+          </a>
+        </section>
+      </main>
+      <footer class="shrink-0 pb-[34px] px-8 text-center">
+        <p
+          class="text-[10px] text-white/30 leading-relaxed max-w-[280px] mx-auto uppercase tracking-wider"
+        >
+          Este grupo compartilha links de afiliados. Não vendemos produtos
+          diretamente. <br />
+          © 2024 PM Promos Old Money
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

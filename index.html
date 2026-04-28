@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+
+      // TODO: substitua pelo ID real do seu Pixel do Meta Ads.
+      fbq('init', '690946051525265');
+      fbq('track', 'PageView');
+    </script>
     <style>
       @import url('https://api.fontshare.com/v2/css?f[]=bespoke-serif@400,500,700&f[]=satoshi@300,400,500,700&display=swap');
       :root {
@@ -70,6 +99,13 @@
     </style>
   </head>
   <body>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=690946051525265&ev=PageView&noscript=1"
+    /></noscript>
     <div class="texture-overlay"></div>
     <div class="w-full flex flex-col relative min-h-screen">
       <header class="shrink-0 pt-14 px-6 flex justify-center items-center z-10">
@@ -265,5 +301,20 @@
         </p>
       </footer>
     </div>
+    <script>
+      const heroCta = document.getElementById('hero-cta');
+
+      if (heroCta) {
+        heroCta.addEventListener('click', function () {
+          if (typeof fbq === 'function') {
+            // Evento de conversao para cliques no CTA principal.
+            fbq('track', 'Lead', {
+              content_name: 'Hero CTA WhatsApp',
+              destination: 'whatsapp_group',
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

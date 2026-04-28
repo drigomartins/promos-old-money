@@ -302,17 +302,38 @@
       </footer>
     </div>
     <script>
+      function trackLeadAndRedirect(event, contentName) {
+        event.preventDefault();
+
+        const target = event.currentTarget;
+        const destinationUrl = target && target.href;
+
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            content_name: contentName,
+            destination: 'whatsapp_group',
+          });
+        }
+
+        if (destinationUrl) {
+          setTimeout(function () {
+            window.location.href = destinationUrl;
+          }, 250);
+        }
+      }
+
       const heroCta = document.getElementById('hero-cta');
+      const finalCta = document.getElementById('final-cta');
 
       if (heroCta) {
-        heroCta.addEventListener('click', function () {
-          if (typeof fbq === 'function') {
-            // Evento de conversao para cliques no CTA principal.
-            fbq('track', 'Lead', {
-              content_name: 'Hero CTA WhatsApp',
-              destination: 'whatsapp_group',
-            });
-          }
+        heroCta.addEventListener('click', function (event) {
+          trackLeadAndRedirect(event, 'Hero CTA WhatsApp');
+        });
+      }
+
+      if (finalCta) {
+        finalCta.addEventListener('click', function (event) {
+          trackLeadAndRedirect(event, 'Final CTA WhatsApp');
         });
       }
     </script>

@@ -145,7 +145,7 @@
             estética Old Money — com descontos reais.
           </p>
           <a
-            href="https://chat.whatsapp.com/FAsPmWDLvH71jDTGGyUhps?mode=gi_t"
+            href="#"
             id="hero-cta"
             data-lead-content="Hero CTA WhatsApp"
             class="gold-gradient cta-glow flex items-center justify-center w-full md:max-w-xl md:mx-auto py-4 md:py-5 rounded-xl text-black font-bold text-base md:text-lg tracking-wide uppercase transition-transform active:scale-95"
@@ -290,7 +290,7 @@
             curadoria.
           </p>
           <a
-            href="https://chat.whatsapp.com/FAsPmWDLvH71jDTGGyUhps?mode=gi_t"
+            href="#"
             id="final-cta"
             data-lead-content="Final CTA WhatsApp"
             class="gold-gradient w-full md:max-w-xl md:mx-auto flex items-center justify-center py-5 rounded-xl text-black font-bold text-lg tracking-wide uppercase shadow-[0_10px_30px_-10px_rgba(212,175,55,0.4)]"
@@ -310,6 +310,9 @@
       </footer>
     </div>
     <script>
+      const WHATSAPP_GROUP_URL =
+        'https://chat.whatsapp.com/DENo9Qjd5Xe24JzjtaXQjc?mode=gi_t';
+
       function trackLeadAndRedirect(event, contentName) {
         event.preventDefault();
 
@@ -342,6 +345,14 @@
 
       const heroCta = document.getElementById('hero-cta');
       const finalCta = document.getElementById('final-cta');
+
+      if (heroCta) {
+        heroCta.href = WHATSAPP_GROUP_URL;
+      }
+
+      if (finalCta) {
+        finalCta.href = WHATSAPP_GROUP_URL;
+      }
 
       if (heroCta) {
         heroCta.addEventListener('click', function (event) {
